@@ -5,7 +5,8 @@ name: Update and publish site
 on:
   # PROJECT 2: switch on the timer by deleting the # at the start of the next two lines.
   schedule:
-    - cron: "17 */3 * * *"   # every 3 hours, at 17 minutes past (UTC). GitHub may start it a little late.
+    - cron: "17 */3 * * *"   # every 3 hours, at 17 minutes past (CET/CEST). GitHub may start it a little late.
+      timezone: "Europe/Berlin"
   workflow_dispatch:          # adds the "Run workflow" button on the Actions tab
   push:
     branches: [main]
@@ -67,7 +68,7 @@ jobs:
           else
             echo "Publishing the website files as they are."
             mkdir -p _site
-            tar --exclude=./.git --exclude=./.github --exclude=./_site --exclude=./scripts --exclude=./test --exclude=./node_modules -cf - . | tar -xf - -C _site
+            tar --exclude=./.git --exclude=./.github --exclude=./_site --exclude=./scripts --exclude=./test --exclude=./node_modules --exclude=./server.js --exclude=./package.json --exclude=./package-lock.json --exclude='./bun.lock*' --exclude=./metadata.json --exclude=./.gitignore --exclude='./.env*' -cf - . | tar -xf - -C _site
             cp public/news.json _site/news.json
             OUT=_site
           fi

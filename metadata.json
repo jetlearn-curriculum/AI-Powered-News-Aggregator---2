@@ -1,0 +1,5 @@
+{
+  "name": "AI-Powered News Aggregator",
+  "description": "Static news website displaying curated articles from public/news.json updated by the scheduled news bot.",
+  "requestFramePermissions": []
+}
