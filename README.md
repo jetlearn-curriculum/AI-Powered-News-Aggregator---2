@@ -29,5 +29,5 @@ Known on purpose: the bot has no memory yet, so the same stories repeat after a 
 | Space | https://www.nasa.gov/news-release/feed/ |
 | Tech and startups (teacher check for suitability) | https://techcrunch.com/feed/ |
 
-Part of the JetLearn **AI Architects** course, Projects 1-4.
+
 
